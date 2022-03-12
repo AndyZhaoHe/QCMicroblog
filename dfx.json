@@ -6,6 +6,10 @@
       "type": "motoko",
       "main": "src/QCMicroblog/main.mo"
     },
+    "QCMicroblog2": {
+      "type": "motoko",
+      "main": "src/QCMicroblog/main.mo"
+    },
     "QCMicroblog_assets": {
       "type": "assets",
       "source": [
