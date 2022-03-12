@@ -9,7 +9,7 @@ actor QCMicroblog {
 
     public type Message = {
       text: Text;
-      createdAt : Int;
+      time : Int;
     };
    
     public type Microblog = actor {
@@ -38,7 +38,7 @@ actor QCMicroblog {
           assert(Principal.toText(msg.caller) == Principal.fromActor(QCMicroblog));
          let m1 = {
              text = text;
-             createdAt = Time.now();
+             time = Time.now();
          };
          messages := List.push(m1, messages);
          
@@ -49,7 +49,7 @@ actor QCMicroblog {
         var posts : List.List<Message> = List.nil();
 
          for(message in Iter.fromList(messages)) {
-             if (message.createdAt >= since) {
+             if (message.time >= since) {
                  posts := List.push(message, posts);
              }
          };
